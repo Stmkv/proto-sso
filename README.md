@@ -17,6 +17,11 @@ protoc -I proto \
    --go_out=gen/go --go_opt=paths=source_relative \
    --go-grpc_out=gen/go --go-grpc_opt=paths=source_relative \
 ```
+
+Утилита `tasks`
+```bash
+task generate
+```
 ### Использование
 
 Добавьте зависимость в свой сервис:
