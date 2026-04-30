@@ -28,6 +28,11 @@ task generate
 
 `go get github.com/your-org/sso-proto`
 
-
+### Версионирование
+При изменении репозитория:
+```bash
+git tag {v*.*.*}
+git push {branch} {version}
+```
 
 Репозиторий создан для собственных целей и необходим для работы https://github.com/Stmkv/grpc-sso
