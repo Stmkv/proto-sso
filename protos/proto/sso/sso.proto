@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "stmkv.sso.v1;ssov1";
+
+service Auth {
+  rpc Register(RegisterRequest) returns (RegisterResponse); // Метод регистрации
+  rpc Login(LoginRequest) returns (LoginResponse); // Метод авторизации
+  rpc isAdmin(IsAdminRequest) returns (IsAdminResponse); // Метод проверки роли администратора
+}
+
+message RegisterRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  int64 user_id = 1;
+}
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+  int32 app_id = 3; // В какой сервис происходит логин
+}
+
+message LoginResponse {
+  string token = 1;
+}
+
+message IsAdminRequest {
+  int64 user_id = 1;
+}
+
+message IsAdminResponse {
+  bool is_admin = 1;
+}
